@@ -1,6 +1,6 @@
 # archive-generator
 
-NodeJS based archive generator, generates from your files and folders a pure HTML-CSS archive, with tree-view.
+NodeJS based archive generator, generates from your files and folders a pure HTML-CSS archive, with tree-view and breadcrumb.
 
 ## Usage
 

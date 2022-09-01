@@ -13,8 +13,6 @@ export default function createContent(archiveDir, archiveContentDir, dir, fileNo
     .relative(archiveDir, dir)
     .split(path.sep)
     .map((item, index, array) => {
-      //console.log(item, index, array);
-
       if (index == array.length - 1) {
         return activebreadCrumbItem.replace('${item}', item);
       }
@@ -45,11 +43,6 @@ export default function createContent(archiveDir, archiveContentDir, dir, fileNo
     .replaceAll('${assetsPath}', assetPath)
     .replace('${breadcrumb}', breadcrumb)
     .replace('${content}', table.replace('${rows}', tableRows));
-  //console.log(dir);
 
   fs.writeFileSync(dir + '.html', pageHtml);
-
-  //console.log(tableRows);
-
-  //table.replace('${rows}')
 }

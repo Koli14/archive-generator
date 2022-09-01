@@ -1,5 +1,5 @@
 import path from 'path';
-import { copyFolders, createIndexHtml } from './utils/index.js';
+import { copyFolders, createIndexHtml, backupArchiveDir } from './utils/index.js';
 
 export default function generator(args) {
   let [srcArchiveDir, archiveDir] = args;
@@ -9,6 +9,8 @@ export default function generator(args) {
   const archiveContentDir = archiveDir + '/' + projectTitle;
   const assetsDir = './assets';
   const archiveAssetsDir = archiveDir + '/assets';
+
+  backupArchiveDir(archiveDir);
   copyFolders(srcArchiveDir, archiveContentDir);
   copyFolders(assetsDir, archiveAssetsDir);
 

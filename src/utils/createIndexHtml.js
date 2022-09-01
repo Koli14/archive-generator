@@ -1,8 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path';
 import { readdir } from 'node:fs/promises';
-import createContent from './createContent.js';
-import { formatBytes } from './index.js';
+import { formatBytes, createContent } from './index.js';
 
 export default async function createIndexHtml(projectTitle, archiveDir, archiveContentDir) {
   let indexTemplate = fs.readFileSync('templates/index.html', 'utf8');

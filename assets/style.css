@@ -23,8 +23,19 @@ iframe {
   text-decoration: none;
 }
 
+.table a {
+  display: flex;
+  align-items: center;
+}
+
+.table a i {
+  margin-right: 6px;
+  min-width: 16px;
+}
 .tree-nav {
   min-width: 450px;
+  overflow: auto;
+  padding-left: 2px;
 }
 
 summary {
@@ -38,71 +49,47 @@ summary::-webkit-details-marker {
 }
 
 .tree-nav__item {
-  display: block;
-  position: relative;
-}
-
-.tree-nav__item.is-expandable::before {
-  border-left: 1px solid #333;
-  content: '';
-  height: 100%;
-  left: 12.8px;
-  position: absolute;
-  top: 28px;
-  height: calc(100% - 28px);
+  display: flex;
 }
 
 .tree-nav__item .tree-nav__item {
-  margin-left: 28px;
+  margin-left: 20px;
 }
 
-.tree-nav__item.is-expandable[open]>.tree-nav__item-title::before {
+.tree-nav__item.is-expandable[open] > .tree-nav__item-title::before {
   font-family: Fontawesome;
   transform: rotate(90deg);
 }
 
-.tree-nav__item.is-expandable>.tree-nav__item-title {
-  padding-left: 28px;
-}
-
-.tree-nav__item.is-expandable>.tree-nav__item-title::before {
-  position: absolute;
+.tree-nav__item.is-expandable > .tree-nav__item-title::before {
   will-change: transform;
   transition: transform 300ms ease;
   font-family: Fontawesome;
-  content: '\f054';
-  left: 0;
+  content: "\f054";
   display: inline-block;
-  width: 25.6px;
   text-align: center;
 }
 
 .tree-nav__item-title {
   cursor: pointer;
-  display: block;
-  outline: 0;
-  line-height: 30px;
+  display: flex;
+  align-items: center;
+  padding-right: 8px;
 }
 
 .tree-nav__item-title:hover {
   color: #0a58ca;
 }
 
-.tree-nav__item-title .fas {
-  display: inline;
-  padding-left: 16px;
-  margin-right: 12.8px;
-  color: #666;
-  position: relative;
+.tree-nav__item-title a {
+  margin-left: 8px;
 }
 
-.tree-nav__item-title .fas::before {
-  top: 0;
-  position: absolute;
-  left: 0;
-  display: inline-block;
-  width: 30px;
-  text-align: center;
+.tree-nav__item-title .fas {
+  display: flex;
+  margin-left: 2px;
+  margin-right: 6px;
+  color: #666;
 }
 
 .tree-nav__item-title::-webkit-details-marker {

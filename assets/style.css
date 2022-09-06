@@ -75,6 +75,7 @@ summary::-webkit-details-marker {
   display: flex;
   align-items: center;
   padding-right: 8px;
+  white-space: nowrap;
 }
 
 .tree-nav__item-title:hover {
